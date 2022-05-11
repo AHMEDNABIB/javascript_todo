@@ -18,27 +18,42 @@
 
 let count = 0;
 
-document.getElementById('add').addEventListener('click',function (e) {
-    count++
-    // document.getElementById("count").innerText = count
-    control('count')
-})
+// document.getElementById('add').addEventListener('click',function (e) {
+//     count++
+//     // document.getElementById("count").innerText = count
+//     control('count')
+// })
 
-document.getElementById("minus").addEventListener("click", function (e) {
-    count--;
+// document.getElementById("minus").addEventListener("click", function (e) {
+//     count--;
     
-    if (count < 0) {
-         document.getElementById("count").innerText = 0;
-        // control('count')
-        count = 0
+//     if (count < 0) {
+//          document.getElementById("count").innerText = 0;
+//         // control('count')
+//         count = 0
         
-    } else {
-        // document.getElementById("count").innerText = count;
+//     } else {
+//         // document.getElementById("count").innerText = count;
 
+//         control('count')
+//     }
+	
+// });
+
+function add() {
+    count++
+    control('count')
+}
+
+function minus() {
+    if (count === 0) {
+        document.getElementById('count') = 0
+        count =0
+    } else {
+        count--
         control('count')
     }
-	
-});
+}
 
 function control(id) {
     document.getElementById(id).innerText = count;
