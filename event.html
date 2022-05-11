@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event</title>
+</head>
+<body>
+    
+    <h1 id="clicking-method"></h1>
+    
+    <input type="text" id="name-field">
+    <button id="update-name">update</button>
+
+    <button onclick="handlejustfunction()">Click Me!</button>
+    <button id='blue_button'>Click Me Blue</button>
+
+    <button id="handle-event">direct add event listner</button>
+
+
+
+    <script>
+        // function makeRed(params) {
+        //     document.body.style.backgroundColor = 'Yellow'
+        // }
+        // const blueButton =document.getElementById('blue_button')
+
+        // blueButton.onclick = makeBlue;
+
+        // function makeBlue(params) {
+        //     document.body.style.backgroundColor = 'Blue'
+        // }
+
+
+        //using function
+
+        function handlejustfunction(){
+            const p = document.getElementById('clicking-method')
+
+            p.innerText = 'setby me'
+        }
+
+        //direct
+
+        document.getElementById('handle-event').addEventListener('click', function (params) {
+            const p = document.getElementById('clicking-method');
+
+            p.innerText ='set by direct addlistner'
+
+            
+        })
+
+
+        //direct update 
+
+        document.getElementById('update-name').addEventListener('click', function (params) {
+            const nameField = document.getElementById('name-field');
+
+            const p = document.getElementById('clicking-method');
+
+            p.innerText = nameField.value
+
+            nameField.value =''
+        })
+
+
+
+    </script>
+</body>
+</html> 

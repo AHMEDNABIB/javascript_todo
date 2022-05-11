@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Comment</title>
+	</head>
+	<body>
+		<h2>Add your comment</h2>
+
+		<section>
+			<h4 id="comment-header"></h4>
+			<div id="comment-container">
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit.
+					Repudiandae expedita minus officiis, incidunt debitis nam
+					nemo quisquam beatae odit fuga, quasi tenetur! Corporis
+					tempora deserunt fugiat voluptas ullam, saepe ad!
+				</p>
+				<p>
+					Deserunt soluta possimus, fugiat dolorum deleniti aliquam
+					sed inventore tempora consequuntur omnis voluptatem, libero
+					eos ea quis ad cupiditate ut accusantium suscipit.
+					Voluptate, id quisquam iure distinctio ut voluptas optio.
+				</p>
+				<p>
+					Harum dolor dolorum ipsam accusantium eligendi quia nobis
+					numquam quo rem. Cum quas quae ad optio blanditiis
+					aspernatur officia nisi libero odio deserunt. Corrupti
+					doloremque, eligendi alias veniam provident delectus!
+				</p>
+			</div>
+
+			<div>
+				<p>Add your comment please</p>
+				<input type="text" id="header-title" />
+				<textarea
+					name=""
+					id="new-comment"
+					cols="60"
+					rows="4"
+				></textarea>
+				<br />
+				<button id="post-button">Post</button>
+			</div>
+		</section>
+
+		<script>
+			document
+				.getElementById("post-button")
+				.addEventListener("click", function (params) {
+                    //Title
+					const headerTitle = document.getElementById("header-title");
+					console.log(headerTitle.value);
+
+                    const h4 =document.getElementById('comment-header')
+
+                    h4.innerText = headerTitle.value
+
+                    headerTitle.value =''
+
+
+                    //Comment Section
+
+					//get user comment
+					const textArea = document.getElementById("new-comment");
+					const userComment = textArea.value;
+
+					// create comment paragraph
+
+					const p = document.createElement("p");
+					p.innerText = userComment;
+
+					//append the comment
+
+					const commentContainer =
+						document.getElementById("comment-container");
+
+					commentContainer.appendChild(p);
+
+					textArea.value = "";
+				});
+		</script>
+	</body>
+</html>
